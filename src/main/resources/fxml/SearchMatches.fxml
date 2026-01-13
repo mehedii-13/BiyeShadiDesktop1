@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.matrimony.controller.SearchMatchesController"
+      prefHeight="750.0" prefWidth="1200.0" spacing="20">
+    <HBox alignment="CENTER_LEFT" spacing="20">
+        <Label text="Search Matches"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="backButton" text="Back to Dashboard" onAction="#handleBackToDashboard"/>
+    </HBox>
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+        <VBox spacing="25">
+            <VBox spacing="15">
+                <Label text="Search by Name" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <TextField fx:id="nameSearchField" promptText="Enter name to search..." prefWidth="400"
+                               style="-fx-padding: 10; -fx-font-size: 14px;"/>
+                    <Button fx:id="nameSearchButton" text="Search by Name" onAction="#handleNameSearch"
+                            style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-padding: 10 20; -fx-background-radius: 5; -fx-cursor: hand;"/>
+                    <Button fx:id="clearNameButton" text="Clear Name" onAction="#handleClearName"
+                            style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-padding: 10 20; -fx-background-radius: 5; -fx-cursor: hand;"/>
+                </HBox>
+                <Separator/>
+            </VBox>
+            <VBox spacing="15">
+                <Label text="Filter Your Search"/>
+                <Separator/>
+                <GridPane hgap="20" vgap="15">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="25"/>
+                        <ColumnConstraints percentWidth="25"/>
+                        <ColumnConstraints percentWidth="25"/>
+                        <ColumnConstraints percentWidth="25"/>
+                    </columnConstraints>
+                    <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <Label text="Min Age"/>
+                        <ComboBox fx:id="minAgeCombo" promptText="Min Age" prefWidth="200"/>
+                    </VBox>
+                    <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <Label text="Max Age"/>
+                        <ComboBox fx:id="maxAgeCombo" promptText="Max Age" prefWidth="200"/>
+                    </VBox>
+                    <VBox spacing="5" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                        <Label text="Min Height"/>
+                        <ComboBox fx:id="minHeightCombo" promptText="Min Height" prefWidth="200"/>
+                    </VBox>
+                    <VBox spacing="5" GridPane.columnIndex="3" GridPane.rowIndex="0">
+                        <Label text="Max Height"/>
+                        <ComboBox fx:id="maxHeightCombo" promptText="Max Height" prefWidth="200"/>
+                    </VBox>
+                    <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                        <Label text="Marital Status"/>
+                        <ComboBox fx:id="maritalStatusCombo" promptText="Any" prefWidth="200"/>
+                    </VBox>
+                    <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Label text="Religion"/>
+                        <ComboBox fx:id="religionCombo" promptText="Any" prefWidth="200"/>
+                    </VBox>
+                    <VBox spacing="5" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <Label text="Education"/>
+                        <ComboBox fx:id="educationCombo" promptText="Any" prefWidth="200"/>
+                    </VBox>
+                    <VBox spacing="5" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                        <Label text="Annual Income"/>
+                        <ComboBox fx:id="incomeCombo" promptText="Any" prefWidth="200"/>
+                    </VBox>
+                    <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                        <Label text="City"/>
+                        <TextField fx:id="cityField" promptText="Enter city" prefWidth="200"/>
+                    </VBox>
+                    <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <Label text="State"/>
+                        <TextField fx:id="stateField" promptText="Enter state" prefWidth="200"/>
+                    </VBox>
+                    <VBox spacing="5" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                        <Label text="Country"/>
+                        <TextField fx:id="countryField" promptText="Enter country" prefWidth="200"/>
+                    </VBox>
+                </GridPane>
+                <HBox spacing="15" alignment="CENTER">
+                    <Button fx:id="searchButton" text="Search Matches" onAction="#handleSearch"/>
+                    <Button fx:id="clearButton" text="Clear Filters" onAction="#handleClearFilters"/>
+                </HBox>
+            </VBox>
+            <VBox spacing="10">
+                <Label fx:id="resultsLabel" text="Search results will appear below"/>
+            </VBox>
+            <VBox fx:id="resultsContainer" spacing="15"/>
+        </VBox>
+    </ScrollPane>
+</VBox>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.matrimony.controller.ContactRequestsController"
+      prefHeight="750.0" prefWidth="1200.0" spacing="20">
+
+    <HBox alignment="CENTER_LEFT" spacing="20">
+        <Label text="Contact Requests (Received by You)"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="backButton" text="Back to Dashboard" onAction="#handleBackToDashboard"/>
+    </HBox>
+
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+        <VBox fx:id="requestsContainer" spacing="15"/>
+    </ScrollPane>
+
+</VBox>
+

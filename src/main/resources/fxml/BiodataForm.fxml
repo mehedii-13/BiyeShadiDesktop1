@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #f8f9fa; -fx-padding: 30;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.matrimony.controller.BiodataController">
+
+    <!-- Header -->
+    <HBox alignment="CENTER" spacing="10" style="-fx-padding: 0 0 20 0;">
+        <Label style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text=" Upload Biodata" />
+    </HBox>
+
+    <Separator prefWidth="800" style="-fx-background-color: #667eea; -fx-pref-height: 2;" />
+
+    <!-- Form Content -->
+    <ScrollPane fitToWidth="true" style="-fx-background: transparent; -fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+        <VBox spacing="25" style="-fx-padding: 30;">
+
+            <!-- Personal Information Section -->
+            <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+                <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #667eea;" text="Personal Information" />
+
+                <GridPane hgap="20" vgap="15">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50" />
+                        <ColumnConstraints percentWidth="50" />
+                    </columnConstraints>
+
+                    <!-- Row 0 -->
+                    <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #495057;" text="Date of Birth *" />
+                        <DatePicker fx:id="dobPicker" prefWidth="350" promptText="Select Date" style="-fx-background-color: white; -fx-border-color: #ced4da; -fx-border-radius: 5;" />
+                    </VBox>
+
+                    <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #495057;" text="Age" />
+                        <TextField fx:id="ageField" editable="false" prefWidth="350" promptText="Auto-calculated" style="-fx-background-color: #e9ecef; -fx-border-color: #ced4da; -fx-border-radius: 5;" />
+                    </VBox>
+
+                    <!-- Row 1 -->
+                    <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #495057;" text="Height *" />
+                        <ComboBox fx:id="heightCombo" prefWidth="350" promptText="Select Height" style="-fx-background-color: white; -fx-border-color: #ced4da; -fx-border-radius: 5;" />
+                    </VBox>
+
+                    <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #495057;" text="Weight (kg)" />
+                        <TextField fx:id="weightField" prefWidth="350" promptText="Enter weight" style="-fx-background-color: white; -fx-border-color: #ced4da; -fx-border-radius: 5;" />
+                    </VBox>
+
+                    <!-- Row 2 -->
+                    <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #495057;" text="Marital Status *" />
+                        <ComboBox fx:id="maritalStatusCombo" prefWidth="350" promptText="Select Status" style="-fx-background-color: white; -fx-border-color: #ced4da; -fx-border-radius: 5;" />
+                    </VBox>
+
+                    <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #495057;" text="Religion *" />
+                        <ComboBox fx:id="religionCombo" prefWidth="350" promptText="Select Religion" style="-fx-background-color: white; -fx-border-color: #ced4da; -fx-border-radius: 5;" />
+                    </VBox>
+
+                    <!-- Row 3 -->
+                    <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #495057;" text="Caste" />
+                        <TextField fx:id="casteField" prefWidth="350" promptText="Enter caste" style="-fx-background-color: white; -fx-border-color: #ced4da; -fx-border-radius: 5;" />
+                    </VBox>
+
+                    <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #495057;" text="Mother Tongue" />
+                        <ComboBox fx:id="motherTongueCombo" prefWidth="350" promptText="Select Language" style="-fx-background-color: white; -fx-border-color: #ced4da; -fx-border-radius: 5;" />
+                    </VBox>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+                </GridPane>
+            </VBox>
+
+            <!-- Education & Career Section -->
+            <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+                <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #667eea;" text="Education &amp; Career" />
+
+                <GridPane hgap="20" vgap="15">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50" />
+                        <ColumnConstraints percentWidth="50" />
+                    </columnConstraints>
+
+                    <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #495057;" text="Highest Education *" />
+                        <ComboBox fx:id="educationCombo" prefWidth="350" promptText="Select Education" style="-fx-background-color: white; -fx-border-color: #ced4da; -fx-border-radius: 5;" />
+                    </VBox>
+
+                    <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #495057;" text="Occupation *" />
+                        <TextField fx:id="occupationField" prefWidth="350" promptText="Enter occupation" style="-fx-background-color: white; -fx-border-color: #ced4da; -fx-border-radius: 5;" />
+                    </VBox>
+
+                    <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #495057;" text="Company/Organization" />
+                        <TextField fx:id="companyField" prefWidth="350" promptText="Enter company name" style="-fx-background-color: white; -fx-border-color: #ced4da; -fx-border-radius: 5;" />
+                    </VBox>
+
+                    <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #495057;" text="Annual Income" />
+                        <ComboBox fx:id="incomeCombo" prefWidth="350" promptText="Select Income Range" style="-fx-background-color: white; -fx-border-color: #ced4da; -fx-border-radius: 5;" />
+                    </VBox>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+                </GridPane>
+            </VBox>
+
+            <!-- Contact Information Section -->
+            <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+                <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #667eea;" text="Contact Information" />
+
+                <GridPane hgap="20" vgap="15">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50" />
+                        <ColumnConstraints percentWidth="50" />
+                    </columnConstraints>
+
+                    <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #495057;" text="Phone Number *" />
+                        <TextField fx:id="phoneField" prefWidth="350" promptText="Enter phone number" style="-fx-background-color: white; -fx-border-color: #ced4da; -fx-border-radius: 5;" />
+                    </VBox>
+
+                    <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #495057;" text="City *" />
+                        <TextField fx:id="cityField" prefWidth="350" promptText="Enter city" style="-fx-background-color: white; -fx-border-color: #ced4da; -fx-border-radius: 5;" />
+                    </VBox>
+
+                    <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #495057;" text="Division *" />
+                        <TextField fx:id="stateField" prefWidth="350" promptText="Enter state" style="-fx-background-color: white; -fx-border-color: #ced4da; -fx-border-radius: 5;" />
+                    </VBox>
+
+                    <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Label style="-fx-font-weight: bold; -fx-text-fill: #495057;" text="Country *" />
+                        <TextField fx:id="countryField" prefWidth="350" promptText="Enter country" style="-fx-background-color: white; -fx-border-color: #ced4da; -fx-border-radius: 5;" />
+                    </VBox>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+                </GridPane>
+            </VBox>
+
+            <!-- Action Buttons -->
+            <HBox alignment="CENTER" spacing="15" style="-fx-padding: 20 0 0 0;">
+                <Button fx:id="submitButton" onAction="#handleSubmit" style="-fx-background-color: #667eea; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 12 40; -fx-background-radius: 8; -fx-cursor: hand;" text="Submit Biodata" />
+                <Button fx:id="cancelButton" onAction="#handleCancel" style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 12 40; -fx-background-radius: 8; -fx-cursor: hand;" text="Cancel" />
+            </HBox>
+
+        </VBox>
+    </ScrollPane>
+
+</VBox>
