@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.matrimony.controller.ShortlistController"
+            prefHeight="800.0" prefWidth="1200.0">
+    <top>
+        <HBox spacing="15" style="-fx-background-color: #E91E63; -fx-padding: 15;">
+            <Button text="Back to Dashboard" onAction="#handleBackToDashboard" 
+                    style="-fx-background-color: white; -fx-text-fill: #E91E63; -fx-font-weight: bold;"/>
+            <Label text="My Shortlist" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: #f5f5f5;">
+            <VBox spacing="20" style="-fx-padding: 30;">
+                <VBox fx:id="shortlistContainer" spacing="15">
+                </VBox>
+                <VBox fx:id="noDataMessage" spacing="15" alignment="CENTER" 
+                      style="-fx-background-color: white; -fx-padding: 50; -fx-background-radius: 10;">
+                    <Label text="No Shortlisted Profiles" 
+                           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #E91E63;"/>
+                    <Label text="You haven't shortlisted any profiles yet." 
+                           style="-fx-font-size: 14px; -fx-text-fill: #666;"/>
+                    <Button text="Search Matches" onAction="#handleSearchMatches"
+                            style="-fx-background-color: #E91E63; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 30;"/>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>
